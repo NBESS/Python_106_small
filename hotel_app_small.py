@@ -56,10 +56,16 @@ def is_vacant(which_hotel, room_number):
 # Defines a function that adds a guest to a specific room
 def check_in(room_number, guest_dictionary):
     hotel[room_number]['guest'] = guest_dictionary
-    return f'{hotel[room_number]}["guest"]["name"]'
+
+# Defines a function that returns the guest dictionary for room number
+def check_out(room_number):
+    return f'{hotel[room_number]["guest"]}'
 
 
 
-# print(check_in('102', guest1))
-# print(is_vacant(hotel, '102'))
+
+print(is_vacant(hotel, '102'))
+check_in('102', guest1)
+print(check_out('102'))
+
 
