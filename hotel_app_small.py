@@ -15,22 +15,11 @@
 
 ###
 
-hotel = {
-    '101': {},
-    '102': {},
-    '103': {},
-    '104': {},
-    '105': {},
-}
-
 # if hotel['101'] == {}:
 #     print(f'Room 101 is vacant.')
 
 # Create dictionary for each additional guest
-# guest1 = {
-#     'name': 'Tracy Ellis'
-#     'phone': '3331234'
-# }
+
 hotel = {
      '101': {
         'guest': {
@@ -44,19 +33,33 @@ hotel = {
      '105': {},
 }
 
+# Creates a guest dictionary
+guest1 = {
+    'name': 'Tracy Ellis',
+    'phone': '3331234',
+}
+
+
 # if hotel['101'] == {}:
 #     print(True)
 # else:
 #     print(False)
 
-
-def is_vacant(hotel, room_number):
-    if hotel[room_number] == {}:
+# Creates a function call to check if a room is vacant
+def is_vacant(which_hotel, room_number):
+    if which_hotel[room_number] == {}:
         return f'Room {room_number} is vacant.' 
 
     else:
         return f'Room {room_number} is occupied'
 
-print(is_vacant(hotel, '101'))
-print(is_vacant(hotel, '102'))
-print(is_vacant(hotel, '103'))
+# Defines a function that adds a guest to a specific room
+def check_in(room_number, guest_dictionary):
+    hotel[room_number]['guest'] = guest_dictionary
+    return f'{hotel[room_number]}["guest"]["name"]'
+
+
+
+# print(check_in('102', guest1))
+# print(is_vacant(hotel, '102'))
+
